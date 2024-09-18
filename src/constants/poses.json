@@ -1,0 +1,44 @@
+[
+    {
+        "id": "US",
+        "title": "Upward Salute",
+        "description": "From Mountain pose, the arms are straight and lifted up toward the sky. The palms are together. The head is tipped back slightly, making sure not to compress the back of your neck. The gaze is toward your thumbs.",
+        "image": "https://pocketyoga.com/assets/images/full/MountainSalute.png"
+    },
+    {
+        "id": "TT",
+        "title": "Toe Touch",
+        "description": "Begin by standing with your feet hip width apart. Hinge forward from your hips with a long, flat back and fold your torso over your thighs. Try to connect your chest to your thighs by hollowing out your lower belly. Send your sit bones high, draw your knee caps up and relax your hamstrings. Slide your index and middle fingers of each hand between the big toes and the second toes. Then curl those fingers under and grip the big toes firmly, wrapping your thumbs around the other two fingers to secure the wrap. Press your toes down against your fingers.",
+        "image": "https://pocketyoga.com/assets/images/full/ForwardBendBigToe.png"
+    },
+    {
+        "id": "L",
+        "title": "Lunge",
+        "description": "The front knee is bent in a 90-degree angle directly above the ankle and the back knee is resting on the earth with the top of the back foot pressed firmly into the earth. The hips are squared and pressed forward. The inner thighs scissor toward each other. The pelvis is tucked under to protect the low back. The ribcage is lifted. The arms are lifted. The hands can be together or separated and facing each other with the fingers spread wide. The gaze is forward.",
+        "image": "https://pocketyoga.com/assets/images/full/WarriorIKneeling_L.png"
+    },
+    {
+        "id": "UD",
+        "title": "Upward Dog",
+        "description": "The body is in a prone position parallel to the earth. The weight of the body is supported equally by the straight arms and the tops of the feet which press firmly into the earth. The shoulders are rotated back and down. The ribcage is lifted and pulled through to the front in a slight upper thoracic backbend. The joints are stacked with the wrists, elbows and shoulders in a straight-line. The neck is a natural extension of the spine and the chin is slightly tucked. The abdomen is pulled up toward the spine. The palms are flat and the elbows are close to the side body. The gaze is forward.",
+        "image": "https://pocketyoga.com/assets/images/full/UpwardDog.png"
+    },
+    {
+        "id": "CP",
+        "title": "Child's Pose",
+        "description": "From a kneeling position, the toes and knees are together with most of the weight of the body resting on the heels of the feet. The arms extend to the front with the fingers spread wide. The forehead rest softly onto the earth. The gaze is down and inward.",
+        "image": "https://pocketyoga.com/assets/images/full/Child.png"
+    },
+    {
+        "id": "DD",
+        "title": "Downward Dog",
+        "description": "The body is positioned in an inverted 'V' with the palms and feet rooted into the earth and sits bones lifted up toward the sky. The arms and legs are straight. The weight of the body is equally distributed between the hands and the feet. The eye of the elbows face forward. The ribcage is lifted and the heart is open. Shoulders are squared to the earth and rotated back, down and inward. The neck is relaxed and the crown of the head is toward the earth. The gaze is down and slightly forward.",
+        "image": "https://pocketyoga.com/assets/images/full/DownwardDog.png"
+    },
+    {
+        "id": "WLF",
+        "title": "Wide Leg Forward",
+        "description": "Step your feet apart wider than your hips, toes turned in, heels out slightly. Press into all four points of your feet and engage your legs. Tuck your tailbone slightly by bringing your pelvis to neutral. Place your hands to your hips and hinge forward to fold. Once you can no longer go further, drop your hands underneath your head and begin to walk your hands through your legs. Drop the crown of your head down and relax your neck. Continue to draw energy up your feet and tilt your hips up and forward slightly. Keep your weight forward so your hips and ankles stay in line.",
+        "image": "https://pocketyoga.com/assets/images/full/WideLeggedForwardBendI_L.png"
+    }
+]

@@ -1,0 +1,7 @@
+[
+    {
+        "id": "WU",
+        "name": "Wake Up",
+        "poses": ["US", "TT", "L", "UD", "CP", "DD", "WLF", "US"]
+    }
+]
