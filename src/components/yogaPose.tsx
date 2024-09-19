@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 interface YogaPoseProps {
     image: string;
-    title: string;
-    description: string;
 }
 
 class YogaPose extends Component<YogaPoseProps> {
@@ -13,11 +11,7 @@ class YogaPose extends Component<YogaPoseProps> {
 
     render() {
         return (
-            <div className='pose-container'>
-                <h1 className='pose-header'>{this.props.title}</h1>
-                <img className='pose-img' src={this.props.image} alt={this.props.title} />
-                <p className='pose-description'>{this.props.description}</p>
-            </div>
+            <img className='pose-img' src={this.props.image}  />
         );
     }
 }

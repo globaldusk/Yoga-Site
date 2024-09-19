@@ -42,13 +42,29 @@
 }
 
 .pose-img {
-  padding-top: 8%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 95%;
   border-radius: 50%;
 }
 
 .pose-container {
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Optional: horizontally center the entire container */
+}
+
+.pose-header {
+  margin-right: 1rem; /* Adds space between the header and tooltip */
+  text-align: center;
+}
+
+.details {
+  margin-top: 0%;
+}
+
+.nav {
+  padding: 5%;
 }
