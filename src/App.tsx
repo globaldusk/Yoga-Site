@@ -15,6 +15,12 @@ function App() {
   const [currentRoutine, setCurrentRoutine] = useState<Routine>(null);
   const [time, setTime] = useState(0);
   
+  const formatTime = (t: number) => {
+    const m = Math.floor(t / 60);
+    const s = t % 60;
+    return m + ":" + (s < 10 ? "0" + s : s);
+  };
+
 
   const handlePoseComplete = () => {
     setPoseIndex(poseIndex+1);
@@ -32,7 +38,7 @@ function App() {
       <div onClick={() => setPaused(!paused)}>
         <CountdownCircleTimer 
           isPlaying={!paused}
-          duration={7}
+          duration={700}
           colors={['#004777', '#F7B801', '#A30000', '#A30000']}
           colorsTime={[7, 5, 2, 0]}
           size={900}
@@ -64,7 +70,7 @@ function App() {
           />
         </div>
 
-        <div>{time} seconds left</div>
+        <h2 className='timer'>{formatTime(time)}</h2>
 
       </div>
     </div>

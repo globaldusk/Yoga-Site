@@ -45,7 +45,7 @@ const ToolTip: React.FC<ToolTipProps> = ({ open: initialOpen, onOpen, onClose, d
 
     return (
         <div className={className}>
-            <InfoIcon onClick={handleOpen}>Open modal</InfoIcon>
+            <InfoIcon fontSize='large' sx={{pt: 2}} className="info-icon" onClick={handleOpen}></InfoIcon>
             <Modal
                 open={open}
                 onClose={handleClose}

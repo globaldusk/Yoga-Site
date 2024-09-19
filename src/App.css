@@ -68,3 +68,16 @@
 .nav {
   padding: 5%;
 }
+
+.info-icon {
+  cursor: pointer; 
+  transition: color 0.3s ease; 
+}
+
+.info-icon:hover {
+  color: #555; 
+}
+
+.timer {
+  font-size: 60px;
+}
