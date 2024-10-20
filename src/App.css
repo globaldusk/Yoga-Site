@@ -81,3 +81,23 @@
 .timer {
   font-size: 60px;
 }
+
+@keyframes pulseWhite {
+  0% {
+    background-color: #433663;
+  }
+  50% {
+    background-color: #242424; /* Slightly darker than white */
+  }
+  100% {
+    background-color: #433663;
+  }
+}
+
+.pulse {
+  animation: pulseWhite 3s ease-in-out infinite;
+}
+
+.routine-button{
+  margin: 10px;
+}

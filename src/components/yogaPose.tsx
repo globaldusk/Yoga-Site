@@ -2,6 +2,7 @@ import { Component } from 'react';
 
 interface YogaPoseProps {
     image: string;
+    onClick: Function;
 }
 
 class YogaPose extends Component<YogaPoseProps> {
@@ -11,7 +12,7 @@ class YogaPose extends Component<YogaPoseProps> {
 
     render() {
         return (
-            <img className='pose-img' src={this.props.image}  />
+            <img className='pose-img' src={this.props.image} onClick={() => this.props.onClick()} />
         );
     }
 }

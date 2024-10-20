@@ -40,5 +40,41 @@
         "title": "Wide Leg Forward",
         "description": "Step your feet apart wider than your hips, toes turned in, heels out slightly. Press into all four points of your feet and engage your legs. Tuck your tailbone slightly by bringing your pelvis to neutral. Place your hands to your hips and hinge forward to fold. Once you can no longer go further, drop your hands underneath your head and begin to walk your hands through your legs. Drop the crown of your head down and relax your neck. Continue to draw energy up your feet and tilt your hips up and forward slightly. Keep your weight forward so your hips and ankles stay in line.",
         "image": "https://pocketyoga.com/assets/images/full/WideLeggedForwardBendI_L.png"
+    },
+    {
+        "id": "Co",
+        "title": "Corpse",
+        "description": "The body rests on the earth in a supine position with the arms resting by the side body. The palms are relaxed and open toward the sky. The shoulder blades are pulled back, down and rolled under comfortably, resting evenly on the earth. The legs are extended down and splayed open. The heels are in and the toes flop out. The eyes are closed. Everything is relaxed. The gaze is inward.",
+        "image": "https://pocketyoga.com/assets/images/full/Corpse.png"
+    },
+    {
+        "id": "SFB",
+        "title": "Seated Forward Bend",
+        "description": "From a seated position with your sit bones rooted, hinge forward over your thighs and reach for your toes. Connect your lower ribs to your thighs and flatten your back even if you need to bend your knees. Wrap your index and middle fingers around your big toes and keep your chest connected to your thighs while maintaining a flat back. Internally rotate your inner thighs and pinky toes toward center. Your neck is a natural extension of your spine.",
+        "image": "https://pocketyoga.com/assets/images/full/SeatedForwardBend.png"
+    },
+    {
+        "id": "SBT",
+        "title": "Supine Belly Twist",
+        "description": "From a supine position, bend both knees and bring them inward toward your chest. Extend your arms out to a T-shape and drop your bent knees to one direction. Take your face to the opposite direction and soften. Repeat on the opposite side.",
+        "image": "https://pocketyoga.com/assets/images/full/SupineBellyTwist_L.png"
+    },
+    {
+        "id": "W",
+        "title": "Waterfall",
+        "description": "From a supine position, with the back relaxed onto the earth, the legs extend toward the sky without any tension behind the knees. The arms rest by the side body and the palms open toward the sky in a receptive mode. Hold this position or gently sway the legs from side to side. The eyes are closed and the gaze is inward.",
+        "image": "https://pocketyoga.com/assets/images/full/CorpseDoubleLegRaise.png"
+    },
+    {
+        "id": "Ca",
+        "title": "Caterpillar",
+        "description": "Begin in a seated position with your legs straight in front. Fold forward over the legs, allowing the back to round. Hands can be on the floor, or may catch your shins, ankles, or toes. Sit on a blanket to support this pose if needed.",
+        "image": "https://pocketyoga.com/assets/images/full/Caterpillar.png"
+    },
+    {
+        "id": "SBA",
+        "title": "Supine Bound Angle",
+        "description": "In supine position, bend both knees and drop the knees to each side, opening the hips. Bring the soles of the feet together and bring the heels as close to the groin as possible, keeping the knees close to the ground.",
+        "image": "https://pocketyoga.com/assets/images/full/SupineBoundAngle.png"
     }
 ]

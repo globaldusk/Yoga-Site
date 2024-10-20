@@ -3,5 +3,10 @@
         "id": "WU",
         "name": "Wake Up",
         "poses": ["US", "TT", "L", "UD", "CP", "DD", "WLF", "US"]
+    },
+    {
+        "id": "BS",
+        "name": "Before Sleep",
+        "poses": ["CP", "SFB", "SBT", "W", "Ca", "SBA", "Co"]
     }
 ]
