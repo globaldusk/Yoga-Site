@@ -2,11 +2,29 @@
     {
         "id": "WU",
         "name": "Wake Up",
-        "poses": ["US", "TT", "L", "UD", "CP", "DD", "WLF", "US"]
-    },
-    {
+        "poses": [
+          { "id": "US", "time": 30 },
+          { "id": "TT", "time": 30 },
+          { "id": "L", "time": 60 },
+          { "id": "UD", "time": 30 },
+          { "id": "CP", "time": 30 },
+          { "id": "DD", "time": 30 },
+          { "id": "WLF", "time": 60 },
+          { "id": "US", "time": 30 }
+        ]
+      },
+      {
         "id": "BS",
         "name": "Before Sleep",
-        "poses": ["CP", "SFB", "SBT", "W", "Ca", "SBA", "Co"]
-    }
+        "poses": [
+          { "id": "CP", "time": 30 },   
+          { "id": "SFB", "time": 30 },  
+          { "id": "SBT", "time": 60 },  
+          { "id": "W", "time": 30 },    
+          { "id": "Ca", "time": 30 },   
+          { "id": "SBA", "time": 30 },  
+          { "id": "Co", "time": 30 }    
+        ]
+      }
+      
 ]

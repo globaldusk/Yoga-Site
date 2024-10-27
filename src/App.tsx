@@ -7,8 +7,8 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import ToolTip from './components/toolTip';
 
 function App() {
-  type Routine = { id: string; name: string; poses: string[] } | null;
-
+  type Pose = { id: string; time: number };
+  type Routine = { id: string; name: string; poses: Pose[] } | null;
   const [paused, setPaused] = useState(false);
   const [poseIndex, setPoseIndex] = useState(0);
   const [currentRoutine, setCurrentRoutine] = useState<Routine>(null);
@@ -32,12 +32,13 @@ function App() {
   useEffect(() => {
     if (currentRoutine) {
       // Find poses based on the IDs in the selected routine
-      const routinePoses = currentRoutine.poses.map((poseId) =>
-        posesData.find((pose) => pose.id === poseId)
+      const routinePoses = currentRoutine.poses.map((poseItem) =>
+        posesData.find((pose) => pose.id === poseItem.id)
       );
       setCurrentPoses(routinePoses);
       setPoseIndex(0); // Reset pose index when a new routine is selected
       setTimerKey((prevKey) => prevKey + 1); // Reset timer by updating key
+      console.log(currentPoses[0]);
     }
   }, [currentRoutine]);
 
@@ -57,7 +58,7 @@ function App() {
           <CountdownCircleTimer
             key={timerKey} // Key to reset the timer
             isPlaying={!paused}
-            duration={7}
+            duration={currentRoutine?.poses[poseIndex]?.time || 30} // Fallback to 10 seconds if undefined
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
             colorsTime={[7, 5, 2, 0]}
             size={900}
