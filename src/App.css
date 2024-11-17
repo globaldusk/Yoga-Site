@@ -100,4 +100,19 @@
 
 .routine-button{
   margin: 10px;
+  font-size: large;
 }
+
+.global-container{
+  max-width: 100%;
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Horizontally center items */
+  justify-content: center; /* Vertically center items */
+  height: 100%; /* Ensure the container uses full height if needed */
+}
+
+

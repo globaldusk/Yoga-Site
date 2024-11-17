@@ -54,14 +54,14 @@ function App() {
       </div>
 
       {currentPoses.length > 0 && (
-        <div>
+        <div className='timer-container'>
           <CountdownCircleTimer
             key={timerKey} // Key to reset the timer
             isPlaying={!paused}
             duration={currentRoutine?.poses[poseIndex]?.time || 30} // Fallback to 10 seconds if undefined
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
             colorsTime={[7, 5, 2, 0]}
-            size={900}
+            size={Math.min(window.innerWidth, window.innerHeight) * 0.5} // 50% of the smaller screen dimension
             strokeWidth={30}
             onComplete={() => {
               handlePoseComplete();
