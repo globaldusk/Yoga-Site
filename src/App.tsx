@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './App.css';
-import YogaPose from './components/YogaPose';
+import YogaPose from './components/YogaPose.tsx';
 import posesData from './constants/poses.json';
 import routines from './constants/routines.json';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-import ToolTip from './components/ToolTip';
+import ToolTip from './components/ToolTip.tsx';
 import { Pose, Routine } from './types';  // Import the types
 
 function App() {
