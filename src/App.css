@@ -105,6 +105,8 @@
 
 .global-container{
   max-width: 100%;
+  border-radius: 10%;
+
 }
 
 .timer-container {

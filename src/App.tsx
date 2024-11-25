@@ -1,90 +1,108 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
-import YogaPose from './components/yogaPose';
+import YogaPose from './components/YogaPose';
 import posesData from './constants/poses.json';
 import routines from './constants/routines.json';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
-import ToolTip from './components/toolTip';
+import ToolTip from './components/ToolTip';
+import { Pose, Routine } from './types';  // Import the types
 
 function App() {
-  type Pose = { id: string; time: number };
-  type Routine = { id: string; name: string; poses: Pose[] } | null;
   const [paused, setPaused] = useState(false);
   const [poseIndex, setPoseIndex] = useState(0);
-  const [currentRoutine, setCurrentRoutine] = useState<Routine>(null);
-  const [currentPoses, setCurrentPoses] = useState<any[]>([]);
+  const [currentRoutine, setCurrentRoutine] = useState<Routine | null>(null);
+  const [currentPoses, setCurrentPoses] = useState<Pose[]>([]);
   const [time, setTime] = useState(0);
   const [timerKey, setTimerKey] = useState(0); // Key to force timer reset
+  const [isDelayed, setIsDelayed] = useState(false); // Delay state
 
-  // Format time for the timer display
   const formatTime = (t: number) => {
     const m = Math.floor(t / 60);
     const s = t % 60;
-    return m + ":" + (s < 10 ? "0" + s : s);
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
   };
 
-  // Handle pose completion and move to the next pose
+  const getRoutineTotalTime = (routine: Routine) => {
+    let totalTime = 0;
+    routine.poses.forEach((pose) => { 
+      if (pose.time) {
+        totalTime += pose.time;
+      }
+    });
+    return Math.round(totalTime / 60);
+  };
+  
+  //TODO: add complete screen, download images, maybe delay on routine start, display delay countdown maybe?
+
   const handlePoseComplete = () => {
-    setPoseIndex((prevIndex) => (prevIndex + 1) % currentPoses.length); // Loop over poses
-  };
-
-  // Update current poses and reset timer whenever a new routine is selected
-  useEffect(() => {
-    if (currentRoutine) {
-      // Find poses based on the IDs in the selected routine
-      const routinePoses = currentRoutine.poses.map((poseItem) =>
-        posesData.find((pose) => pose.id === poseItem.id)
-      );
-      setCurrentPoses(routinePoses);
-      setPoseIndex(0); // Reset pose index when a new routine is selected
-      setTimerKey((prevKey) => prevKey + 1); // Reset timer by updating key
-      console.log(currentPoses[0]);
+    if (poseIndex + 1 === currentPoses.length) {
+      console.log('Routine completed!');
+    } else {
+      setPoseIndex((prevIndex) => prevIndex + 1); // Move to the next pose
+      setTimerKey((prevKey) => prevKey + 1); // Reset timer
+      setIsDelayed(true); // Start delay
+      setTimeout(() => {
+        setIsDelayed(false); // End delay after 3 seconds
+      }, 3000); // 3-second delay
     }
-  }, [currentRoutine]);
+  };  
+
+  const handleRoutineSelect = (routine: Routine) => {
+    setCurrentRoutine(routine);
+
+    const routinePoses = routine.poses
+      .map((poseItem) => posesData.find((pose) => pose.id === poseItem.id))
+      .filter(Boolean) as Pose[];
+
+    setCurrentPoses(routinePoses);
+    setPoseIndex(0);
+    setTimerKey((prevKey) => prevKey + 1);
+  };
 
   return (
     <div className={paused ? 'global-container pulse' : 'global-container'}>
       <div className="nav">
-        {/* Display routine selection buttons */}
         {routines.map((routine) => (
-          <button className='routine-button' key={routine.id} onClick={() => setCurrentRoutine(routine)}>
-            {routine.name}
+          <button
+            className="routine-button"
+            key={routine.id}
+            onClick={() => handleRoutineSelect(routine)}
+          >
+            {routine.name + ` (${getRoutineTotalTime(routine)}m)`}
           </button>
         ))}
       </div>
 
       {currentPoses.length > 0 && (
-        <div className='timer-container'>
+        <div className="timer-container">
           <CountdownCircleTimer
-            key={timerKey} // Key to reset the timer
-            isPlaying={!paused}
-            duration={currentRoutine?.poses[poseIndex]?.time || 30} // Fallback to 10 seconds if undefined
+            key={timerKey}
+            isPlaying={!paused && !isDelayed} // Play only after the delay ends
+            duration={currentRoutine?.poses[poseIndex]?.time || 30}
             colors={['#004777', '#F7B801', '#A30000', '#A30000']}
             colorsTime={[7, 5, 2, 0]}
-            size={Math.min(window.innerWidth, window.innerHeight) * 0.5} // 50% of the smaller screen dimension
+            size={Math.min(window.innerWidth, window.innerHeight) * 0.5}
             strokeWidth={30}
-            onComplete={() => {
-              handlePoseComplete();
-              return { shouldRepeat: true, delay: 3 }; // Delay between poses
-            }}
+            onComplete={() => handlePoseComplete()}
             onUpdate={(newTime) => setTime(newTime)}
           >
             {() => (
-              <YogaPose onClick={() => setPaused(!paused)}
-                image={currentPoses[poseIndex]?.image}
+              <YogaPose
+                onClick={() => setPaused(!paused)}
+                image={currentPoses[poseIndex]?.image || ''}
               />
             )}
           </CountdownCircleTimer>
 
           <div className="pose-container">
             <h1 className="pose-header">
-              {currentPoses[poseIndex]?.title}
+              {currentPoses[poseIndex]?.title || 'Unknown Pose'}
             </h1>
             <ToolTip
               className="pose-description"
               open={false}
-              title={currentPoses[poseIndex]?.title}
-              description={currentPoses[poseIndex]?.description}
+              title={currentPoses[poseIndex]?.title || ''}
+              description={currentPoses[poseIndex]?.description || ''}
               onClose={() => setPaused(true)}
               onOpen={() => setPaused(true)}
             />
